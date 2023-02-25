@@ -2,6 +2,6 @@
 
 export default function Projects() {
   return (
-	<div>index</div>
+	<div>projects</div>
   )
 }
