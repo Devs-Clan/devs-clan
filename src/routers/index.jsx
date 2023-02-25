@@ -6,4 +6,12 @@ export const router = createBrowserRouter([
     path: '/projects',
     element: <Projects />,
   },
+  {
+    path: '/members',
+    element: <Projects />,
+  },
+  {
+    path: '/news',
+    element: <Projects />,
+  },
 ]);

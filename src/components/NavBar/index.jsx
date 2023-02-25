@@ -56,10 +56,10 @@ export default function NavBar() {
               <Avatar ml={3} size={'sm'} src={''} />
             </MenuButton>
             <MenuList>
-              <MenuItem>Link 1</MenuItem>
-              <MenuItem>Link 2</MenuItem>
+              <MenuItem>Profile</MenuItem>
+              <MenuItem>Settings</MenuItem>
               <MenuDivider />
-              <MenuItem>Link 3</MenuItem>
+              <MenuItem>Log out</MenuItem>
             </MenuList>
           </Menu>
         </Flex>
