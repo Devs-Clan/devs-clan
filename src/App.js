@@ -1,10 +1,9 @@
 import React from 'react';
 import theme from './theme/index';
 import { ChakraProvider } from '@chakra-ui/react';
-import { RouterProvider } from 'react-router-dom';
+import { BrowserRouter, RouterProvider } from 'react-router-dom';
 import { router } from './routers';
-import NavBar from './components/NavBar';
-import Footer from './components/Footer';
+import { NavBar, Footer } from './components';
 
 function App() {
   return (
@@ -17,9 +16,7 @@ function App() {
           justifyContent: 'space-between',
         }}
       >
-        <NavBar />
-        <RouterProvider router={router} />
-        <Footer />
+        <RouterProvider router={router}/>
       </div>
     </ChakraProvider>
   );
