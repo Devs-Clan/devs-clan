@@ -9,9 +9,18 @@ import Footer from './components/Footer';
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <NavBar />
-      <RouterProvider router={router} />
-      <Footer />
+      <div
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          height: '100vh',
+          justifyContent: 'space-between',
+        }}
+      >
+        <NavBar />
+        <RouterProvider router={router} />
+        <Footer />
+      </div>
     </ChakraProvider>
   );
 }

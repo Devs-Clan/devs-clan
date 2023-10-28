@@ -13,8 +13,10 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
+  Text,
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
+import { FaSignOutAlt, FaRegSun, FaRegUserCircle } from 'react-icons/fa';
 import { NavLink } from './NavLink';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
 import { Logo } from '../Logo';
@@ -56,10 +58,19 @@ export default function NavBar() {
               <Avatar ml={3} size={'sm'} src={''} />
             </MenuButton>
             <MenuList>
-              <MenuItem>Profile</MenuItem>
-              <MenuItem>Settings</MenuItem>
+              <MenuItem>
+                <FaRegUserCircle />
+                <Text ml={3}>Profile</Text>
+              </MenuItem>
+              <MenuItem>
+                <FaRegSun />
+                <Text ml={3}>Settings</Text>
+              </MenuItem>
               <MenuDivider />
-              <MenuItem>Log out</MenuItem>
+              <MenuItem>
+                <FaSignOutAlt />
+                <Text ml={3}>Sign Out</Text>
+              </MenuItem>
             </MenuList>
           </Menu>
         </Flex>

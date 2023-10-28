@@ -25,7 +25,7 @@ export default function Footer() {
         align={{ base: 'center', md: 'center' }}
       >
         <Logo />
-        <Text>Devs Clan - Be Better</Text>
+        <Text>Devs Clan - Join us!</Text>
         <Stack direction={'row'} spacing={6}>
           <SocialButton label={'Twitter'} href={'#'}>
             <FaTwitter />
