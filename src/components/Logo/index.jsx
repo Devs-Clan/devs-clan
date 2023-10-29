@@ -1,7 +1,17 @@
 import React from 'react';
-import { Image } from '@chakra-ui/react';
-import logo from '../../assets/devs-clan-logo-no-bg.png';
+import { Image, useColorMode } from '@chakra-ui/react';
+import lightmodeLogo from '../../assets/logo-no-bg-lightmode.png';
+import darkmodeLogo from '../../assets/logo-no-bg-darkmode.png';
 
 export function Logo({ size = 50, background = 'transparent' }) {
-  return <Image style={{ borderRadius: 360, width: size, background: background }} src={logo} />;
+  const { colorMode } = useColorMode()
+  return (
+    <Image
+      style={{
+        borderRadius: 360,
+        width: size,
+        background: background
+      }}
+      src={colorMode === 'dark' ? darkmodeLogo : lightmodeLogo} />
+  );
 };

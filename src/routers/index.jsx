@@ -3,7 +3,6 @@ import { Projects, Settings, Members, News } from '../pages/';
 import { Footer, NavBar } from '../components';
 
 
-
 const AppStructure = () => (
   <div
     style={{
