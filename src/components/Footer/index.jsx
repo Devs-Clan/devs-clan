@@ -7,7 +7,6 @@ import {
 } from '@chakra-ui/react';
 import { FaInstagram, FaTwitter, FaYoutube, FaGithub } from 'react-icons/fa';
 import { SocialButton } from './SocialButton';
-import { Logo } from '../Logo';
 
 export default function Footer() {
   return (
@@ -24,19 +23,18 @@ export default function Footer() {
         justify={{ base: 'center', md: 'space-between' }}
         align={{ base: 'center', md: 'center' }}
       >
-        <Logo />
         <Text>Devs Clan - Join us!</Text>
         <Stack direction={'row'} spacing={6}>
-          <SocialButton label={'Twitter'} href={'#'}>
+          <SocialButton label={'Twitter'} href='#'>
             <FaTwitter />
           </SocialButton>
-          <SocialButton label={'YouTube'} href={'#'}>
+          <SocialButton label={'YouTube'} href='#'>
             <FaYoutube />
           </SocialButton>
-          <SocialButton label={'Instagram'} href={'#'}>
+          <SocialButton label={'Instagram'} href='#'>
             <FaInstagram />
           </SocialButton>
-          <SocialButton label={'Github'} href={'#'}>
+          <SocialButton label={'Github'} href='https://github.com/Devs-Clan'>
             <FaGithub />
           </SocialButton>
         </Stack>

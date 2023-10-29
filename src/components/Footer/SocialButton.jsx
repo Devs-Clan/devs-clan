@@ -3,6 +3,7 @@ import { chakra, useColorModeValue, VisuallyHidden } from '@chakra-ui/react';
 export const SocialButton = ({ children, label, href }) => {
   return (
     <chakra.button
+      target='blank'
       bg={useColorModeValue('blackAlpha.100', 'whiteAlpha.100')}
       rounded={'full'}
       w={8}

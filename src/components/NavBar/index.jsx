@@ -14,17 +14,20 @@ import {
   useColorModeValue,
   Stack,
   Text,
+
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { FaSignOutAlt, FaRegSun, FaRegUserCircle } from 'react-icons/fa';
 import { NavLink } from './NavLink';
 import { ColorModeSwitcher } from '../ColorModeSwitcher';
 import { Logo } from '../Logo';
+import { useNavigate } from 'react-router-dom'
 
-const Links = ['Projects', 'Members', 'News'];
+const links = ['Projects', 'Members', 'News'];
 
 export default function NavBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const navigate = useNavigate()
 
   return (
     <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4}>
@@ -39,7 +42,7 @@ export default function NavBar() {
         <HStack spacing={8} alignItems={'center'}>
           <Logo />
           <HStack as={'nav'} spacing={4} display={{ base: 'none', md: 'flex' }}>
-            {Links.map(link => (
+            {links.map(link => (
               <NavLink key={link}>{link}</NavLink>
             ))}
           </HStack>
@@ -58,18 +61,18 @@ export default function NavBar() {
               <Avatar ml={3} size={'sm'} src={''} />
             </MenuButton>
             <MenuList>
-              <MenuItem>
+              <MenuItem onClick={() => navigate('profile')}>
                 <FaRegUserCircle />
-                <Text ml={3}>Profile</Text>
+                <Text ml={3} >Profile</Text>
               </MenuItem>
-              <MenuItem>
+              <MenuItem onClick={() => navigate('settings')}>
                 <FaRegSun />
-                <Text ml={3}>Settings</Text>
+                <Text ml={3} >Settings</Text>
               </MenuItem>
               <MenuDivider />
               <MenuItem>
                 <FaSignOutAlt />
-                <Text ml={3}>Sign Out</Text>
+                <Text ml={3} >Sign Out</Text>
               </MenuItem>
             </MenuList>
           </Menu>
@@ -79,7 +82,7 @@ export default function NavBar() {
       {isOpen ? (
         <Box pb={4} display={{ md: 'none' }}>
           <Stack as={'nav'} spacing={4}>
-            {Links.map(link => (
+            {links.map(link => (
               <NavLink key={link}>{link}</NavLink>
             ))}
           </Stack>
