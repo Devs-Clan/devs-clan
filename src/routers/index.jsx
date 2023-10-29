@@ -1,6 +1,6 @@
 import { createBrowserRouter, Outlet } from 'react-router-dom';
-import { Projects, Settings, Members, News } from '../pages/';
-import { Footer, NavBar } from '../components';
+import { Projects, Settings, Members, News, Homepage } from '../pages/';
+import { Footer, Header } from '../components';
 
 
 const AppStructure = () => (
@@ -12,8 +12,13 @@ const AppStructure = () => (
       justifyContent: 'space-between',
     }}
   >
-    <NavBar />
-    <Outlet />
+    <Header />
+    <div style={{
+      padding: 10,
+      height: '-webkit-fill-available'
+    }}>
+      <Outlet />
+    </div>
     <Footer />
   </div>
 );
@@ -39,6 +44,10 @@ export const router = createBrowserRouter([
         path: 'news',
         element: <News />,
       },
+      {
+        path: 'homepage',
+        element: <Homepage />
+      }
     ],
   },
 ]);

@@ -13,8 +13,7 @@ import {
   useDisclosure,
   useColorModeValue,
   Stack,
-  Text,
-
+  Text
 } from '@chakra-ui/react';
 import { HamburgerIcon, CloseIcon } from '@chakra-ui/icons';
 import { FaSignOutAlt, FaRegSun, FaRegUserCircle } from 'react-icons/fa';
@@ -25,7 +24,7 @@ import { useNavigate } from 'react-router-dom'
 
 const links = ['Projects', 'Members', 'News'];
 
-export default function NavBar() {
+export default function Header() {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const navigate = useNavigate()
 
