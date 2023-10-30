@@ -1,26 +1,16 @@
 import { createBrowserRouter, Outlet } from 'react-router-dom';
 import { Projects, Settings, Members, News, Homepage } from '../pages/';
 import { Footer, Header } from '../components';
-
+import { Flex } from '@chakra-ui/react';
 
 const AppStructure = () => (
-  <div
-    style={{
-      display: 'flex',
-      flexDirection: 'column',
-      height: '100vh',
-      justifyContent: 'space-between',
-    }}
-  >
+  <Flex h='100vh' flexDirection='column' justifyContent='space-between'>
     <Header />
-    <div style={{
-      padding: 10,
-      height: '-webkit-fill-available'
-    }}>
+    <div style={{ padding: 10, height: '-webkit-fill-available' }}>
       <Outlet />
     </div>
     <Footer />
-  </div>
+  </Flex>
 );
 
 export const router = createBrowserRouter([
