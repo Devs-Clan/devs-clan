@@ -1,5 +1,5 @@
-import PreviewCard from './PreviewCard'
+import ProjectCard from './ProjectCard'
 
 export {
-    PreviewCard
+    ProjectCard
 }

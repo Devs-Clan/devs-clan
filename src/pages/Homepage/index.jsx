@@ -1,27 +1,65 @@
 import React from 'react'
-import { Card, Grid, GridItem, Text, VStack } from '@chakra-ui/react'
-import { PreviewCard } from '../../components/cards'
+import { Card, Text, VStack, Flex, Grid, Wrap } from '@chakra-ui/react'
+import { ProjectCard } from '../../components/cards'
+
+function Users() {
+  return (
+    <>
+      {
+        Array.apply(0, Array(10)).map(function (x, i) {
+          return <ProjectCard
+            imageUrl="https://avatars.githubusercontent.com/u/51932344?s=96&v=4"
+            owner='947yechielb'
+            tags={['hi', 'test']}
+            title='this product'
+            key='key' />
+        })
+      }
+    </>
+  )
+}
+
+function TodayStars() {
+  return (
+    <VStack w='30%'>
+      <Text fontSize='2xl'>Today's Project</Text>
+      <ProjectCard
+        imageUrl="https://avatars.githubusercontent.com/u/51932344?s=96&v=4"
+        owner='947yechielb'
+        tags={[]}
+        title='this product'
+        key='key' />
+
+      <Text fontSize='2xl'>Today's Programmer</Text>
+      <ProjectCard
+        imageUrl="https://avatars.githubusercontent.com/u/51932344?s=96&v=4"
+        owner='947yechielb'
+        tags={['hi', 'test']}
+        title='this product'
+        key='key' />
+
+    </VStack>
+  )
+}
+
+function ExploreProjects() {
+  return (
+    <Wrap padding={5} boxShadow='sm' rounded='xl'>
+      <Grid templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }} gap={6}>
+        <Users />
+      </Grid>
+    </Wrap>
+  )
+}
 
 export default function Homepage() {
   return (
-    <Grid
-      height='full'
-      gap={2.5}
-      templateRows='repeat(2, 1fr)'
-      templateColumns='repeat(5, 1fr)'>
-      <GridItem colSpan={1} rowSpan={2} >
-        <VStack h='100%'>
-          <Text fontSize='2xl'>Today's Project</Text>
-          <PreviewCard name="downlaod from google" src="https://github.githubassets.com/images/modules/profile/achievements/quickdraw-default--light-medium.png" />
-          <Text fontSize='2xl'>Today's Programmer</Text>
-          <PreviewCard name="Yechiel" src="https://avatars.githubusercontent.com/u/51932344?s=96&v=4" />
-        </VStack>
-      </GridItem>
-      <GridItem colSpan={4} rowSpan={3}>
-        <Card h='100%' alignItems='center' padding={5} boxShadow='md' rounded='xl'>
-          <Text fontSize='2xl'>Explore Projects</Text>
-        </Card>
-      </GridItem>
-    </Grid>
+    <Flex
+      flexDirection={{ base: 'column', md: 'row' }}
+      // height='full'
+      gap={2.5}>
+      <TodayStars />
+      <ExploreProjects />
+    </Flex>
   )
 }

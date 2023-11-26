@@ -4,10 +4,10 @@ import { Footer, Header } from '../components';
 import { Flex } from '@chakra-ui/react';
 
 const AppStructure = () => (
-  <Flex h='100vh' flexDirection='column' justifyContent='space-between'>
+  <Flex flexDirection='column'>
     <Header />
-    <div style={{ padding: 10, height: '-webkit-fill-available' }}>
-      <Outlet />
+    <div style={{ padding: 10 }}>
+      {window.location.pathname == '/' ? <Homepage /> : <Outlet />}
     </div>
     <Footer />
   </Flex>
@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
       },
       {
         path: 'homepage',
-        element: <Homepage />
+        element: <Homepage />,
       }
     ],
   },
