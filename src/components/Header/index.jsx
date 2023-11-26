@@ -15,17 +15,21 @@ import { Logo } from './Logo';
 
 
 export default function Header() {
-  const { isOpen, onOpen, onClose } = useDisclosure();
+  const {
+    isOpen: isHamburgerOpen,
+    onOpen: onHamburgerOpen,
+    onClose: onHamburgerClose
+  } = useDisclosure();
 
   return (
     <Box bg={useColorModeValue('gray.100', 'gray.900')} px={4} boxShadow='2xl'>
       <Flex h={16} alignItems={'center'} justifyContent={'space-between'}>
         <IconButton
           size={'md'}
-          icon={isOpen ? <CloseIcon /> : <HamburgerIcon />}
+          icon={isHamburgerOpen ? <CloseIcon /> : <HamburgerIcon />}
           aria-label={'Open Menu'}
           display={{ md: 'none' }}
-          onClick={isOpen ? onClose : onOpen}
+          onClick={isHamburgerOpen ? onHamburgerClose : onHamburgerOpen}
         />
         <HStack spacing={8} alignItems={'center'}>
           <Logo />
@@ -39,7 +43,7 @@ export default function Header() {
         </Flex>
       </Flex>
 
-      {isOpen ? (
+      {isHamburgerOpen ? (
         <Box pb={4} display={{ md: 'none' }}>
           <Stack as={'nav'} spacing={4}>
             <ProjectButton />
