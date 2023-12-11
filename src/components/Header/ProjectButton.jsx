@@ -8,13 +8,14 @@ import {
    MenuItem,
    useDisclosure
 } from '@chakra-ui/react';
-import CreateProject from '../forms/CreateProject'
+import CreateProject from '../forms/AddProject'
+
 
 export default function ProjectButton() {
    const {
       isOpen: isCreateProjectOpen,
       onOpen: onCreateProjectOpen,
-      onClose: oCreateProjectClose
+      onClose: onCreateProjectClose
    } = useDisclosure();
 
    return (
@@ -28,7 +29,7 @@ export default function ProjectButton() {
                <MenuItem onClick={onCreateProjectOpen}>Add</MenuItem>
             </MenuList>
          </Menu>
-         <CreateProject isOpen={isCreateProjectOpen} onClose={oCreateProjectClose} />
+         <CreateProject isOpen={isCreateProjectOpen} onClose={onCreateProjectClose} />
       </Box>
    );
 };

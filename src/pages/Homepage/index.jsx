@@ -1,7 +1,6 @@
 import React from 'react'
-import { Card, Text, VStack, Flex, Grid, Wrap } from '@chakra-ui/react'
+import { Text, VStack, Flex, Grid, Wrap } from '@chakra-ui/react'
 import { ProjectCard } from '../../components/cards'
-import CreateProject from '../../components/forms/CreateProject'
 
 function Users() {
   return (
