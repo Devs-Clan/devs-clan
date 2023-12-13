@@ -17,7 +17,7 @@ import {
 } from "@chakra-ui/react";
 import BaseModal from '../BaseModal';
 
-export default function AddProjectForm({ isOpen, onClose }) {
+export default function AddProjectModal({ isOpen, onClose }) {
   const toast = useToast();
   const [owner, setOwner] = useState("");
   const [githubLink, setGithubLink] = useState("");

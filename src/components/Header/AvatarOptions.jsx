@@ -14,7 +14,7 @@ import {
    HStack
 } from '@chakra-ui/react';
 import { AuthContext } from "../../App";
-import SignIn from '../forms/SignIn'
+import SignInModal from '../modals/SignInModal'
 
 export default function AvatarOptions() {
    const navigate = useNavigate()
@@ -66,7 +66,7 @@ export default function AvatarOptions() {
                </MenuItem>
             </MenuList>
          </Menu>
-         <SignIn isOpen={isSignInOpen} onClose={onSignInClose} />
+         <SignInModal isOpen={isSignInOpen} onClose={onSignInClose} />
       </>
    )
 }
