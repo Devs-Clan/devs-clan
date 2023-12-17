@@ -1,12 +1,12 @@
 import React from 'react'
-import { HStack, Badge } from '@chakra-ui/react'
+import { Badge, HStack } from '@chakra-ui/react'
 
 
-export default function Tags({ tags }) {
+export default function Tags({ tags, ...props }) {
    return (
-      <HStack wrap='wrap' justifyContent='center' gap={1}>
-         {tags.map((tag, index) => (
-            <Badge borderRadius="full" px="2" colorScheme="teal" key={index}>
+      <HStack gap={1} wrap="wrap" {...props}>
+         {tags.map((tag, index) => (     
+            <Badge shadow="sm" borderRadius="full" px="2" colorScheme="teal" key={index}>
                {tag}
             </Badge>
          ))}
