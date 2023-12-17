@@ -1,19 +1,6 @@
 import { useState } from 'react';
 import {
-  Box,
-  Button,
-  FormControl,
-  FormLabel,
-  Input,
-  Switch,
-  useToast,
-  Modal,
-  ModalOverlay,
-  ModalContent,
-  ModalHeader,
-  ModalCloseButton,
-  ModalBody,
-  ModalFooter
+  Box, Button, FormControl, FormLabel, Input, Switch, useToast, ModalFooter
 } from "@chakra-ui/react";
 import BaseModal from '../BaseModal';
 

@@ -22,14 +22,15 @@ export default function Footer({ project }) {
                   Edit
                </Button>
             )}
+
             <Mailto email={owner.email}>
                <Button leftIcon={<MdMailOutline />}>Contact</Button>
             </Mailto>
-            <Button leftIcon={<FaHeart />}>
-               {likes} Likes
-            </Button>
             <Button as="a" href={githubLink} leftIcon={<FaGithub />} target="_blank" rel="noopener noreferrer">
                Github
+            </Button>
+            <Button leftIcon={<FaHeart />}>
+               {likes} Likes
             </Button>
          </HStack>
       </ModalFooter>

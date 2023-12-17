@@ -1,6 +1,7 @@
 import React from 'react'
-import { Text, VStack, Flex, Grid, Wrap } from '@chakra-ui/react'
+import { Text, VStack, Flex, Grid } from '@chakra-ui/react'
 import { ProjectCard } from '../../components/cards'
+import { Search } from '../../components/atoms'
 
 function Users() {
   return (
@@ -46,17 +47,19 @@ function TodayStars() {
 
 function ExploreProjects() {
   return (
-    <Wrap padding={5} boxShadow='sm' rounded='xl'>
+    <VStack alignItems='stretch' padding={5} boxShadow='sm' rounded='xl'>
+      <Search />
       <Grid templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)', lg: 'repeat(4, 1fr)' }} gap={6}>
         <Users />
       </Grid>
-    </Wrap>
+    </VStack>
   )
 }
 
 export default function Homepage() {
   return (
     <Flex
+
       flexDirection={{ base: 'column', md: 'row' }}
       gap={2.5}>
       <TodayStars />
